@@ -2,35 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage('Instalação das dependencias') {
+
+        stage("Clonar o hub de leitura") {
             steps {
-                echo 'Instalando node...'
-                bat 'npm install'
+                bat 'git clone https://github.com/migteles/hub-de-leitura-integrado.git'
             }
         }
 
-        stage('Execução dos testes') {
-            parallel {
-                stage('Testes no electron') {
-                    steps {
-                        bat 'npm run test-path1'
-                    }
+        stage("Instalar as dependencias do projeto") {
+            steps {
+                dir('hub-de-leitura-integrado') {
+                    bat 'npm install'
+                    bat 'npm start'
                 }
-
-                stage('Testes no chrome') {
-                    steps {
-                        bat 'npm run test-path2'
-                    }
-                }
-
-                stage('Testes no firefox') {
-                    steps {
-                        bat 'npm run test-path3'
-                    }
-                }
-
             }
         }
+
+
     }
 
     post {
