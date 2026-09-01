@@ -88,4 +88,19 @@ describe('Funcionalidade: Cadastro', () => {
     // Resultado
     cy.get('#register-form').should('contain', 'Você deve aceitar os termos de uso')
   });
+
+  it.only('Realizar cadastro com sucesso usando comandos customizados', () => {
+    let email = faker.internet.email()
+    let nome = faker.person.fullName()  
+    cy.preencherCadastro(
+    nome,
+    email,
+    '40028922',
+    'teste123',
+    'teste123'
+    )
+    // Resultado
+    cy.url().should('include', 'dashboard.html')
+    cy.get('#user-name').should('contain', name)
+  });
 });
