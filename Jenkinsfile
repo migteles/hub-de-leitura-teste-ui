@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     stages {
-
-        stage("Clonar o hub de leitura") {
+        
+        stage('Clonar o hub de leitura') {
             steps {
                 bat '''
                     if exists hub-de-leitura-integrado rmdir /s /q hub-de-leitura-integrado
@@ -12,7 +12,7 @@ pipeline {
             }
         }
 
-        stage("Instalar as dependencias do projeto") {
+        stage('Instalar as dependencias do projeto') {
             steps {
                 dir('hub-de-leitura-integrado') {
                     bat '''
@@ -38,7 +38,7 @@ pipeline {
                 }
             }
 
-        stage("Rodar os testes automatizados") {
+        stage('Rodar os testes automatizados') {
             steps {
                 dir('hub-de-leitura-teste-ui') {
                     bat 'call npm run test-path1'
