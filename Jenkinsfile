@@ -12,7 +12,7 @@ pipeline {
             steps {
                 dir('hub-de-leitura-integrado') {
                     bat 'npm install'
-                    bat '/B npm start'
+                    bat 'npm start'
                 }
             }
         }
