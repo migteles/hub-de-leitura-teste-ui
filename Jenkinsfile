@@ -5,7 +5,7 @@ pipeline {
 
         stage("Clonar o hub de leitura") {
             steps {
-                bat 'rmdir /s /q hub-de-leitura-integrado'
+                deleteDir()
                 bat 'git clone https://github.com/migteles/hub-de-leitura-integrado.git'
             }
         }
