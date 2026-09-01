@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-path1": "npx cypress run --browser electron",
+    "test-path2": "npx cypress run --browser chrome",
+    "test-path3": "npx cypress run --browser firefox"
   },
   "repository": {
     "type": "git",
