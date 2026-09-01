@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    tools { nodejs "nodejs"}
 
     stages {
         stage('Clonar o hub de leitura') {
@@ -13,7 +14,7 @@ pipeline {
             steps {
                 dir('hub-de-leitura-integrado') {
                     bat 'npm install'
-                    bat 'npm start'
+                    bat 'npm start /b'
                 }
             }
         }
