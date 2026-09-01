@@ -5,8 +5,8 @@ pipeline {
         
         stage('Clonar o hub de leitura') {
             steps {
+                deleteDir()
                 bat '''
-                    if exists hub-de-leitura-integrado rmdir /s /q hub-de-leitura-integrado
                     git clone https://github.com/migteles/hub-de-leitura-integrado.git
                 '''
             }
@@ -26,7 +26,6 @@ pipeline {
         stage('Clonar o projeto de testes')
             steps {
                 bat '''
-                    if exists hub-de-leitura-teste-ui rmdir /s /q hub-de-leitura-teste-ui
                     git clone https://github.com/migteles/hub-de-leitura-teste-ui.git
                 '''
             }
