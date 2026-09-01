@@ -5,6 +5,7 @@ pipeline {
 
         stage("Clonar o hub de leitura") {
             steps {
+                bat 'rmdir /s /q hub-de-leitura-integrado'
                 bat 'git clone https://github.com/migteles/hub-de-leitura-integrado.git'
             }
         }
@@ -18,18 +19,19 @@ pipeline {
             }
         }
 
-
+        stage("Rodar os testes automatizados") {
+            steps {
+                dir('hub-de-leitura-teste-ui') {
+                    bat 'npm run test-path1'
+                }
+            }
+        }
     }
 
     post {
-        success {
-            echo 'Build executada com sucesso'
-        }
-        failure {
-            echo 'Falha na execução do pipeline'
+        always {
+            bat 'taskkill /F /IM node.exe || exit 0'
         }
     }    
-
-
 
 }
