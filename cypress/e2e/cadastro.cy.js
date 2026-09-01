@@ -7,6 +7,10 @@ describe('Funcionalidade: Cadastro', () => {
     cy.visit('register.html')
   });
   
+  afterEach(() => {
+    cy.screenshot()
+  });
+
   it('Realizar Cadastro com sucesso', () => { 
     let email = faker.internet.email()
     let nome = faker.person.fullName()

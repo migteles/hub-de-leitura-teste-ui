@@ -7,7 +7,7 @@ pipeline {
             steps {
                 bat '''
                     rmdir /s /q hub-de-leitura-integrado
-                    git clone https://github.com/migteles/hub-de-leitura-integrado.git
+                    git clone --depth 1 https://github.com/migteles/hub-de-leitura-integrado.git
                     '''
             }
         }
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 bat '''
                     rmdir /s /q hub-de-leitura-teste-ui
-                    git clone https://github.com/migteles/hub-de-leitura-teste-ui.git
+                    git clone --depth 1 https://github.com/migteles/hub-de-leitura-teste-ui.git
                     '''
             }
         }
