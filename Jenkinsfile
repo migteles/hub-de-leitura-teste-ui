@@ -4,37 +4,29 @@ pipeline {
     stages {
         stage('Clonar o hub de leitura') {
             steps {
-                bat '''
-                    if exists hub-de-leitura-integrado rmdir /s /q hub-de-leitura-integrado
-                    git clone https://github.com/migteles/hub-de-leitura-integrado.git
-                '''
+                bat 'git clone https://github.com/migteles/hub-de-leitura-integrado.git'
             }
         }
 
         stage('Instalar as dependencias do projeto') {
             steps {
                 dir('hub-de-leitura-integrado') {
-                    bat '''
-                        call npm install
-                        start /B npm start
-                    '''
+                    bat 'npm install'
+                    bat '/B npm start'
                 }
             }
         }
 
         stage('Clonar o projeto de testes') {
             steps {
-                bat '''
-                    if exists hub-de-leitura-teste-ui rmdir /s /q hub-de-leitura-teste-ui
-                    git clone https://github.com/migteles/hub-de-leitura-teste-ui.git
-                '''
+                bat 'git clone https://github.com/migteles/hub-de-leitura-teste-ui.git'
             }
         }
 
         stage('Instalar as dependencias dos testes') {
             steps {
                 dir('hub-de-leitura-teste-ui') {
-                    bat 'call npm install'
+                    bat 'npm install'
                 }
             }
         }
@@ -42,7 +34,7 @@ pipeline {
         stage('Rodar os testes automatizados') {
             steps {
                 dir('hub-de-leitura-teste-ui') {
-                    bat 'call npm run test-path1'
+                    bat 'npm run test-path1'
                 }
             }
         }
