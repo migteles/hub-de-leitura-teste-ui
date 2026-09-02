@@ -1,4 +1,5 @@
 /// <reference types="cypress"/>
+import user from "../fixtures/usuario.json"
 
 describe('Funcionalidade: Login', () => {
 
@@ -17,6 +18,9 @@ describe('Funcionalidade: Login', () => {
 
     it('Login usuario normal usando comandos customizados', () => {
         cy.login('usuario@teste.com', 'user123')
+        /// Resultado
+        cy.get('#alert-container').should('contain', 'Login realizado com sucesso!')
+        cy.url().should('include', 'dashboard.html')
     });
 
     it('Login admin usando comandos customizados', () => {
@@ -24,6 +28,10 @@ describe('Funcionalidade: Login', () => {
         /// Resultado
         cy.get('#alert-container').should('contain', 'Login realizado com sucesso!')
         cy.url().should('include', 'dashboard.html')
+    });
+
+    it('Login usando importação de massa de dados', () => {
+        cy.login(user.email, user.senha)
     });
 
 });
