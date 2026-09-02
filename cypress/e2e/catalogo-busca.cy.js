@@ -1,1 +1,22 @@
 /// <reference types="cypress"/>
+import catalogo from "../fixtures/livros.json"
+
+describe('Funcionalidade: Busca no Catalogo de Livros', () => {
+
+    beforeEach(() => {
+        cy.visit('catalog.html')
+    });
+
+    it('Deve buscar o livro 1984 com sucesso', () => {
+        cy.get('#search-input').type('1984')
+        // Resultado
+        cy.get('.card-title > .text-dark').should('contain', '1984')
+    });
+
+    it.only('Deve buscar um livro do arquivo da massa de dados', () => {
+        cy.get('#search-input').type(catalogo[0].livro)
+        // Resultado
+        cy.get('.card-title > .text-dark').should('contain', catalogo[0].livro)
+    });
+
+})
