@@ -6,6 +6,10 @@ describe('Funcionalidade: Catalogo de Livros', () => {
         cy.visit('catalog.html')
     });
 
+    afterEach(() => {
+        cy.screenshot()
+    });
+
     it('Deve clicar no botão Adicionar a cesta', () => {
         cy.get(':nth-child(1) > .card > .card-body > .mt-auto > .d-grid > .btn-primary').click()
         cy.get('#cart-count').should('contain', 1)

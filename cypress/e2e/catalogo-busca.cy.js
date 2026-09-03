@@ -6,6 +6,10 @@ describe('Funcionalidade: Busca no Catalogo de Livros', () => {
     beforeEach(() => {
         cy.visit('catalog.html')
     });
+    
+    afterEach(() => {
+        cy.screenshot()
+    });
 
     it('Deve buscar o livro 1984 com sucesso', () => {
         cy.get('#search-input').type('1984')

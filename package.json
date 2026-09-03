@@ -7,7 +7,7 @@
     "test-path1": "npx cypress run --browser electron",
     "test-path2": "npx cypress run --browser chrome",
     "test-path3": "npx cypress run --browser firefox",
-    "cy:report": "npx cypress run --record --key 82f6167f-62ba-447b-b2f4-056b0e7bdbb7"
+    "cy:report": "npx cypress run --record --key 791387a7-ca3f-4154-8d9a-8e2099fbbf3a"
   },
   "repository": {
     "type": "git",

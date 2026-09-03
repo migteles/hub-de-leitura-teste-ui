@@ -8,6 +8,10 @@ describe('Funcionalidade: Cadastro', () => {
     cadastroPage.visitarPaginaCadastro()
   });
 
+  afterEach(() => {
+    cy.screenshot()
+  });
+
   it('Realizar Cadastro com sucesso', () => { 
     let email = faker.internet.email()
     let nome = faker.person.fullName()

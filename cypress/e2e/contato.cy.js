@@ -3,6 +3,10 @@ describe('Funcionalidade: Contato', () => {
   beforeEach(() => {
     cy.visit('index.html')
   });
+
+  afterEach(() => {
+    cy.screenshot()
+  });
   
   it('Deve preencher o formulário de contato com sucesso', () => {
     cy.get('[name="name"]').type('Miguel Teles')

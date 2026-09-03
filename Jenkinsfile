@@ -51,6 +51,7 @@ pipeline {
 
     post {
         always {
+            archiveArtifacts artifacts: 'cypress/screenshots/**/*.*,cypress/videos/**/*.*', allowEmptyArchive: true
             bat 'taskkill /F /IM node.exe || exit 0'
         }
     }    
