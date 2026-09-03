@@ -4,6 +4,7 @@ module.exports = defineConfig({
   projectId: 'hvsv6t',
   allowCypressEnv: false,
 
+  defaultBrowser: 'chrome',
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
