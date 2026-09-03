@@ -20,7 +20,7 @@ describe('Funcionalidade: Cadastro', () => {
     cy.get('#register-btn').click()
     // Resultado
     cy.url().should('include', 'dashboard.html')
-    cy.get('#user-name').should('contain', name)
+    cy.get('#user-name').should('contain', nome)
   });
 
   it('Falhar o Cadastro por não adicionar o nome', () => { 
@@ -98,7 +98,7 @@ describe('Funcionalidade: Cadastro', () => {
     )
     // Resultado
     cy.url().should('include', 'dashboard.html')
-    cy.get('#user-name').should('contain', name)
+    cy.get('#user-name').should('contain', nome)
   });
 
   it('Realizar cadastro com sucesso usando Page Objects', () => {
