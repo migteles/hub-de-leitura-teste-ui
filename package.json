@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-path1": "npx cypress run --browser electron",
-    "test-path2": "npx cypress run --browser chrome",
-    "test-path3": "npx cypress run --browser firefox",
+    "test-path1": "npx cypress run --browser chrome",
+    "test-path2": "npx cypress run --browser firefox",
     "cy:report": "npx cypress run --record --key 791387a7-ca3f-4154-8d9a-8e2099fbbf3a"
   },
   "repository": {
@@ -20,12 +19,14 @@
   },
   "homepage": "https://github.com/migteles/hub-de-leitura-teste-ui#readme",
   "dependencies": {
-    "@faker-js/faker": "^10.5.0"
+    "@faker-js/faker": "^10.5.0",
+    "allure": "^3.16.0"
   },
   "allowScripts": {
     "cypress@16.0.0": true
   },
   "devDependencies": {
+    "allure-cypress": "^3.12.0",
     "cypress": "^16.0.0"
   }
 }
