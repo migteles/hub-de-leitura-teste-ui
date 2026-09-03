@@ -2,7 +2,6 @@ const { allureCypress } = require ("allure-cypress/reporter");
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  allowCypressEnv: false,
   projectId: "2y7bme",
   defaultBrowser: 'chrome',
 
