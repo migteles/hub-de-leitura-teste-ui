@@ -2,10 +2,6 @@ const { defineConfig } = require("cypress");
 const { allureCypress } = require ("allure-cypress/reporter");
 
 module.exports = defineConfig({
-  env: {
-    apiUrl: 'http://localhost:3000/api/',
-    stage: 'development'
-  },
   projectId: "2y7bme",
   defaultBrowser: 'chrome',
 
