@@ -23,6 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+const pluginConfig = Cypress.expose('pluginConfig')
+
+if (pluginConfig === 'enabled') {
+  initializePlugin(pluginConfig)
+}
 
 Cypress.Commands.add('login', (email, senha) => {
     cy.get('#email').type(email, {log: false})
