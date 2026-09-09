@@ -22,7 +22,9 @@
     "@faker-js/faker": "^10.5.0"
   },
   "allowScripts": {
-    "cypress@16.0.0": true
+    "cypress@16.0.0": true,
+    "allure@3.17.0": true,
+    "allure-cypress@3.12.1": true
   },
   "devDependencies": {
     "allure": "^3.17.0",
