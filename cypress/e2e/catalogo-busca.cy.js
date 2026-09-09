@@ -1,3 +1,4 @@
+/// <reference types="cypress"/>
 import catalogo from "../fixtures/livros.json"
 
 describe('Funcionalidade: Busca no Catalogo de Livros', () => {

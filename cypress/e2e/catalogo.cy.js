@@ -1,3 +1,5 @@
+/// <reference types="cypress"/>
+
 describe('Funcionalidade: Catalogo de Livros', () => {
     
     beforeEach(() => {
