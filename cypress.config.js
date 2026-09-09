@@ -1,9 +1,7 @@
 const { defineConfig } = require("cypress");
-import { allureCypress } from ("allure-cypress/reporter");
+const { allureCypress } = require ("allure-cypress/reporter");
 
 module.exports = defineConfig({
-  defaultBrowser: 'chrome',
-
   e2e: {
     setupNodeEvents(on, config) {
       allureCypress(on, config, {
@@ -13,6 +11,7 @@ module.exports = defineConfig({
     },
     baseUrl: "http://localhost:3000/",
     projectId: "2y7bme",
+    defaultBrowser: 'chrome',
     video: true
   },
 });
