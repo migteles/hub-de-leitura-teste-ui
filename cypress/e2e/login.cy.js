@@ -1,4 +1,3 @@
-/// <reference types="cypress"/>
 import user from "../fixtures/usuario.json"
 
 describe('Funcionalidade: Login', () => {
