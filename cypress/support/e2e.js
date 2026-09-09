@@ -16,3 +16,11 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 import 'allure-cypress';
+
+Cypress.on('uncaught:exception', (err) => {
+  // Ignore known third-party errors
+  if (err.message.includes('ResizeObserver')) return false;
+  if (err.message.includes('gtag')) return false;
+  // Let real errors fail the test
+  return true;
+});
