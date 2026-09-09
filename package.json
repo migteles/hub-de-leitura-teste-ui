@@ -6,7 +6,7 @@
   "scripts": {
     "test-path1": "npx cypress run --browser chrome",
     "test-path2": "npx cypress run --browser firefox",
-    "cy:report": "npx cypress run --record --key 791387a7-ca3f-4154-8d9a-8e2099fbbf3a"
+    "report": "npx cypress run --record --key 791387a7-ca3f-4154-8d9a-8e2099fbbf3a"
   },
   "repository": {
     "type": "git",
