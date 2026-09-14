@@ -29,6 +29,7 @@
   "devDependencies": {
     "allure": "^3.17.0",
     "allure-cypress": "^3.12.1",
+    "allure-playwright": "^3.12.1",
     "cypress": "^16.0.0"
   }
 }
