@@ -144,3 +144,5 @@ vite.config.ts.timestamp-*
 
 cypress/screenshots/
 cypress/videos/
+allure-results/
+allure-report/
