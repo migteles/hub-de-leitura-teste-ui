@@ -43,7 +43,7 @@ pipeline {
         stage('Rodar os testes automatizados') {
             steps {
                 dir('hub-de-leitura-teste-ui') {
-                    bat 'call npm rum test'
+                    bat 'call npm run test'
                 }
             }
         }
