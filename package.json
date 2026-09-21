@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/migteles/hub-de-leitura-teste-ui#readme",
   "dependencies": {
-    "@faker-js/faker": "^10.5.0"
+    "@faker-js/faker": "^10.5.0",
+    "allure-js-commons": "^3.12.2"
   },
   "allowScripts": {
     "cypress@16.0.0": true,
@@ -28,7 +29,7 @@
   },
   "devDependencies": {
     "allure": "^3.17.0",
-    "allure-cypress": "^3.12.1",
+    "allure-cypress": "^3.12.2",
     "allure-playwright": "^3.12.1",
     "cypress": "^16.0.0"
   }
