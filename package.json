@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-path1": "npx cypress run --browser chrome",
-    "test-path2": "npx cypress run --browser firefox",
+    "test": "npx cypress run --browser chrome",
+    "testpath2": "npx cypress run --browser firefox",
     "report": "npx cypress run --record --key 791387a7-ca3f-4154-8d9a-8e2099fbbf3a"
   },
   "repository": {
